@@ -7,8 +7,6 @@ gem 'therubyracer'
 gem "nifty-generators", :group => :development
 gem "authlogic"
 gem "heroku"
-gem "pg"
-
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
