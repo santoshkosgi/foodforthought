@@ -5,6 +5,7 @@ gem 'rails', '3.1.3'
 gem 'execjs'
 gem 'therubyracer'
 gem "nifty-generators", :group => :development
+gem "authlogic"
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
