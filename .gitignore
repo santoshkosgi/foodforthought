@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile ~/.gitignore_global
 
 # Ignore bundler config
-database1.yml
+config/locales/database1.yml
 /.bundle
 
 # Ignore the default SQLite database.
