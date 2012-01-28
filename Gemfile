@@ -15,6 +15,9 @@ group :development, :test do
   gem 'mysql2', '> 0.3'
 end
 
+#postmark app.
+gem 'postmark-rails', '0.4.1'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
