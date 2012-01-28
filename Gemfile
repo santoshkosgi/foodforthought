@@ -15,8 +15,13 @@ group :development, :test do
   gem 'mysql2', '> 0.3'
 end
 
+gem "daemons"
+
 #postmark app.
 gem 'postmark-rails', '0.4.1'
+
+#delayed jobs
+gem 'delayed_job_active_record'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'

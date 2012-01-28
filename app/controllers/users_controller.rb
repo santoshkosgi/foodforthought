@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        UserMailer.registration_confirmation(@user).deliver
+        UserMailer.delay.registration_confirmation(@user)
         format.html { redirect_to :action => :show, :id=> @user.id}
         format.json { render json: @user, status: :created, location: @user }
       else
