@@ -21,7 +21,7 @@ class UserSessionsController < ApplicationController
       if @user_session.save
         redirect_to :action => "index"
       else
-        render action: "new"
+        render :action => "new"
       end
   end
 
