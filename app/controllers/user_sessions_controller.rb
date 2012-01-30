@@ -9,11 +9,6 @@ class UserSessionsController < ApplicationController
   # GET /user_sessions/new.json
   def new
     @user_session = UserSession.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user_session }
-    end
   end
 
   # GET /user_sessions/1/edit
@@ -23,15 +18,11 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
 
-    respond_to do |format|
       if @user_session.save
-        format.html { redirect_to :action => :index }
-        format.json { render json: @user_session, status: :created, location: @user_session }
+        redirect_to :action => "index"
       else
-        format.html { render action: "new" }
-        format.json { render json: @user_session.errors, status: :unprocessable_entity }
+        render action: "new"
       end
-    end
   end
 
   # PUT /user_sessions/1
@@ -43,9 +34,6 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.find
     @user_session.destroy
 
-    respond_to do |format|
-      format.html { redirect_to root_url }
-      format.json { head :ok }
-    end
+       redirect_to root_url
   end
 end
