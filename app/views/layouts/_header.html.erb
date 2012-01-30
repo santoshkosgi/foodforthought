@@ -10,7 +10,7 @@
       <form action="" class="pull-right">
         <input class="input-small" type="text" placeholder="Username">
         <input class="input-small" type="password" placeholder="Password">
-        <button class="btn" type="submit">Sign in</button>
+        <%= link_to 'Sign In', :controller=> "user_sessions", :action=> "new" %>
         <%= link_to 'Sign Up', new_user_path %>
       </form>
     </div>

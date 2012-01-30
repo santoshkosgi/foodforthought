@@ -1,0 +1,23 @@
+<%= form_for @user_session, :url => { :action => "create" } do |f| %>
+  <ul class="alert-message block-message error">
+    <% @user_session.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <div class="clearfix">
+    <%= f.label :name %>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :password %>
+    <div class="input">
+      <%= f.password_field :password%>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class=>"btn primary" %>
+  </div>
+
+<% end %>
