@@ -1,0 +1,36 @@
+<%= form_for @user, :url => { :action => "update" } do |f| %>
+<div class="clearfix">
+    <%= f.label :name %>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :email %>
+    <div class="input">
+      <%= f.text_field :email %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :location %>
+    <div class="input">
+      <%= f.text_field :location%>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :password %>
+    <div class="input">
+      <%= f.password_field :password%>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :password_confirmation %>
+    <div class="input">
+      <%= f.password_field :password_confirmation%>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class=>"btn primary" %>
+  </div>
+
+<% end %>
