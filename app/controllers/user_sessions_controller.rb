@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
   # GET /user_sessions/new
   # GET /user_sessions/new.json
   def new
-    @user_session = UserSession.new(params[:user])
+    @user_session = UserSession.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -25,7 +25,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to @user_session, notice: 'User session was successfully created.' }
+        format.html { redirect_to :action => :index }
         format.json { render json: @user_session, status: :created, location: @user_session }
       else
         format.html { render action: "new" }
