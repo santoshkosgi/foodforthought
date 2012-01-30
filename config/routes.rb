@@ -1,6 +1,8 @@
 Food::Application.routes.draw do
   resources :user_sessions, :users
 
+  match "logout" => 'user_sessions#destroy'
+
   get "home/index"
 
   # The priority is based upon order of creation:
