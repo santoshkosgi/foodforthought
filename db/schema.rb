@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120128085437) do
+ActiveRecord::Schema.define(:version => 20120130110714) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20120128085437) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "user_sessions", :force => true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "crypted_password"
@@ -38,6 +45,9 @@ ActiveRecord::Schema.define(:version => 20120128085437) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "perishable_token",  :default => "", :null => false
   end
+
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

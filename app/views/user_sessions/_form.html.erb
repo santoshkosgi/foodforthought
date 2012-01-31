@@ -17,6 +17,9 @@
     </div>
   </div>
   <div class="actions">
+  <%= link_to 'Forgot Password', :controller=> "password_resets", :action=> "new" %>
+  </div>
+  <div class="actions">
     <%= f.submit "Submit", :class=>"btn primary" %>
   </div>
 <% end %>

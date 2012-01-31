@@ -2,6 +2,7 @@ Food::Application.routes.draw do
   resources :user_sessions, :users
 
   match "logout" => 'user_sessions#destroy'
+  resources :password_resets, :only => [ :new, :create, :edit, :update ]
 
   get "home/index"
 
