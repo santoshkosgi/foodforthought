@@ -5,11 +5,11 @@
   <%= @hotel.name %> <%= @hotel.location %>
 <% end %>
 <h1> Items Availiable </h1>
+
 <table>
-  <tr>
-    <%= render :partial=>'listing1', :collection => @hotel.fooditems, :as => 'fooditem' %>
-  </tr>
+    <%= render :partial=>'listing1', :collection => @hotel.fooditems, :as => 'fooditem', :locals => {:hotel => @hotel}%>
 </table>
+
 <h2>Add a fooditem:</h2>
 <%= form_for([@hotel, @hotel.fooditems.build]) do |f| %>
   <div class="field">

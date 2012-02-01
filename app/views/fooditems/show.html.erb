@@ -1,1 +1,19 @@
-<%= @fooditem.name %>
+<% content_for :head do %>
+  <title>Hotels</title>
+<% end %>
+<% content_for :pagename do %>
+  <%= @hotel.name %> <%= @hotel.location %>
+<% end %>
+<h1><%= @fooditem.name %></h1>
+  <div class="field">
+    <%= "Price" %><br />
+    <%= @fooditem.price%>
+  </div>
+  <div class="field">
+    <%= "Category" %><br />
+    <%= @fooditem.category %>
+  </div>
+  <div class="field">
+    <%= "Description" %><br />
+    <%= @fooditem.description %>
+  </div>

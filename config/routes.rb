@@ -6,6 +6,7 @@ Food::Application.routes.draw do
   end
 
   match "logout" => 'user_sessions#destroy'
+  match "fooditem" => "fooditems#show"
   resources :password_resets, :only => [ :new, :create, :edit, :update ]
 
   get "home/index"

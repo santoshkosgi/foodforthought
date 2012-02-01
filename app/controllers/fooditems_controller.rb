@@ -6,7 +6,8 @@ class FooditemsController < ApplicationController
   end
 
   def show
-    @fooditem = Fooditem.find(params[:id])
+    @hotel = Hotel.find(params[:hotel_id])
+    @fooditem = @hotel.fooditems.find(params[:id])
   end
 
 end
