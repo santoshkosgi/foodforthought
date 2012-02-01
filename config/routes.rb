@@ -1,5 +1,9 @@
 Food::Application.routes.draw do
-  resources :user_sessions, :users
+  resources :user_sessions
+  resources:users
+  resources:hotels do
+    resources :fooditems
+  end
 
   match "logout" => 'user_sessions#destroy'
   resources :password_resets, :only => [ :new, :create, :edit, :update ]

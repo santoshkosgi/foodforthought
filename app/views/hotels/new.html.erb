@@ -1,0 +1,8 @@
+<% content_for :head do %>
+  <title>New Hotels</title>
+<% end %>
+<% content_for :pagename do %>
+  Hotels
+<% end %>
+<%= render :partial => "form", :locals => { :hotel => @hotel } %>
+<%= link_to 'Back',:controller =>'hotels',:action => 'index' %>

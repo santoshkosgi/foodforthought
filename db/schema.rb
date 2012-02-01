@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130110714) do
+ActiveRecord::Schema.define(:version => 20120131115120) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -28,6 +37,25 @@ ActiveRecord::Schema.define(:version => 20120130110714) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "fooditems", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.string   "category"
+    t.text     "description"
+    t.integer  "hotel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fooditems", ["hotel_id"], :name => "index_fooditems_on_hotel_id"
+
+  create_table "hotels", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_sessions", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,12 @@
+<% content_for :head do %>
+  <title>Hotels</title>
+<% end %>
+<% content_for :pagename do %>
+  Hotels
+<% end %>
+<table>
+
+<%= render :partial=>'listing', :collection => @hotels, :as => 'hotel' %>
+
+</table>
+<%= link_to 'Add Hotel',:controller =>'hotels',:action => 'new' %>

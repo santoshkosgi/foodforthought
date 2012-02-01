@@ -1,0 +1,2 @@
+module FooditemsHelper
+end
