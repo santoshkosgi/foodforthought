@@ -10,25 +10,11 @@
     <%= render :partial=>'listing1', :collection => @hotel.fooditems, :as => 'fooditem', :locals => {:hotel => @hotel}%>
 </table>
 
-<h2>Add a fooditem:</h2>
-<%= form_for([@hotel, @hotel.fooditems.build]) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= link_to "Add new item" ,new_hotel_fooditem_path(@hotel)%>
+
+<h1> Comments </h1>
+<table>
+    <%= render :partial=>'listing2', :collection => @hotel.comments, :as => 'comment', :locals => {:hotel => @hotel}%>
+</table>
+
+<%= link_to "Add a Comment" ,new_hotel_comment_path(@hotel)%>

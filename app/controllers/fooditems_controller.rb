@@ -1,4 +1,5 @@
 class FooditemsController < ApplicationController
+
   def create
     @hotel = Hotel.find(params[:hotel_id])
     @fooditem = @hotel.fooditems.create(params[:fooditem])
@@ -8,6 +9,11 @@ class FooditemsController < ApplicationController
   def show
     @hotel = Hotel.find(params[:hotel_id])
     @fooditem = @hotel.fooditems.find(params[:id])
+  end
+
+  def new
+  @hotel=Hotel.find(params[:hotel_id])
+  @fooditem = @hotel.fooditems.new
   end
 
 end

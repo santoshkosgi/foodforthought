@@ -3,6 +3,7 @@ Food::Application.routes.draw do
   resources:users
   resources:hotels do
     resources :fooditems
+    resources :comments
   end
 
   match "logout" => 'user_sessions#destroy'
