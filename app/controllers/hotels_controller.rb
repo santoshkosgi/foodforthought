@@ -25,7 +25,7 @@ class HotelsController < ApplicationController
       if @hotel.save
          redirect_to :controller => "hotels", :action => "index"
       else
-         render action: "new"
+         render :action => "new"
       end
   end
 
@@ -35,7 +35,7 @@ class HotelsController < ApplicationController
       if @hotel.update_attributes(params[:post])
          redirect_to @hotel
       else
-         render action: "edit"
+         render :action => "edit"
       end
   end
 
