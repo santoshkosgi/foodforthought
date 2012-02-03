@@ -23,6 +23,9 @@ gem 'postmark-rails', '0.4.1'
 #delayed jobs
 gem 'delayed_job_active_record'
 
+#to upload images
+gem "paperclip", "~> 2.0",
+    :branch => 'rails3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 

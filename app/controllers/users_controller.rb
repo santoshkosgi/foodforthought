@@ -8,14 +8,14 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
       if @user.save
          UserMailer.delay.registration_confirmation(@user)
-         redirect_to :action => "show", :id=> @user.id
+         redirect_to :action => "index"
       else
          render :action => "new"
       end
   end
 
   def show
-
+    @user = current_user
   end
 
   def edit

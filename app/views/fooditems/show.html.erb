@@ -5,6 +5,7 @@
   <%= @hotel.name %> <%= @hotel.location %>
 <% end %>
 <h1><%= @fooditem.name %></h1>
+  <%= image_tag @fooditem.photo.url %>
   <div class="field">
     <%= "Price" %><br />
     <%= @fooditem.price%>
