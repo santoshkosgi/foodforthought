@@ -17,6 +17,7 @@ class HotelsController < ApplicationController
 
   def edit
     @hotel = Hotel.find(params[:id])
+
   end
 
   def create
@@ -32,10 +33,10 @@ class HotelsController < ApplicationController
   def update
     @hotel = Hotel.find(params[:id])
 
-      if @hotel.update_attributes(params[:post])
-         redirect_to @hotel
+    if @hotel.save
+         redirect_to :controller => "hotels", :action => "index"
       else
-         render :action => "edit"
+         render :controller => "hotels",:action => "edit", :id => @hotel
       end
   end
 

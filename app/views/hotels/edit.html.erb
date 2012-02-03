@@ -1,0 +1,25 @@
+<%= form_for @hotel, :url => { :controller => "hotels", :action => "update" } do |f| %>
+
+    <ul class="alert-message block-message error">
+      <% @hotel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+
+  <div class="clearfix">
+    <%= f.label :name %>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :location %>
+    <div class="input">
+      <%= f.text_field :location%>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update", :class=>"btn primary" %>
+  </div>
+
+<% end %>
