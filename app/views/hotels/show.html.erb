@@ -9,12 +9,23 @@
 <table>
     <%= render :partial=>'listing1', :collection => @hotel.fooditems, :as => 'fooditem', :locals => {:hotel => @hotel}%>
 </table>
-
-<%= link_to "Add new item" ,new_hotel_fooditem_path(@hotel)%>
-
+<div class="btn-group">
+<%= link_to "Add new item" ,new_hotel_fooditem_path(@hotel), :class => "btn"%>
+</div>
+<br/>
+<br/>
+<br/>
 <h1> Comments </h1>
 <table>
     <%= render :partial=>'listing2', :collection => @hotel.comments, :as => 'comment', :locals => {:hotel => @hotel}%>
 </table>
-
-<%= link_to "Add a Comment" ,new_hotel_comment_path(@hotel)%>
+<div class="btn-group">
+<%= link_to "Add a Comment" ,new_hotel_comment_path(@hotel), :class => "btn"%>
+</div>
+<br/>
+<br/>
+<ul class="pager">
+  <li>
+      <%= link_to 'Back',:controller =>'hotels',:action => 'index' %>
+  </li>
+</ul>

@@ -3,10 +3,9 @@
     <div class="container">
       <a class="brand" href="#">Food for thought</a>
       <ul class="nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
         <% if current_user %>
+          <li><%= link_to 'Hotels',:controller =>'hotels',:action => 'index' %></li>
+          <li><%= link_to 'Add Hotel',:controller =>'hotels',:action => 'new' %></li>
           <li><%= link_to "Profile", :action => "show", :controller => "users",:id => :current%></li>
           <li><%= link_to "Edit Profile",edit_user_path(:current)%></li>
           <li><%= link_to "Logout", logout_path %></li>

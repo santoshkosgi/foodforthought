@@ -6,15 +6,41 @@
 <% end %>
 <h1><%= @fooditem.name %></h1>
   <%= image_tag @fooditem.photo.url %>
-  <div class="field">
-    <%= "Price" %><br />
-    <%= @fooditem.price%>
-  </div>
-  <div class="field">
-    <%= "Category" %><br />
+  <table>
+    <tr>
+      <td>
+        <span class="label label-info">
+          <%= "Price" %>
+        </span>
+      </td>
+      <td>
+         <%= @fooditem.price%>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <span class="label label-info">
+          <%= "Category" %>
+        </spam>
+      </td>
+      <td>
     <%= @fooditem.category %>
-  </div>
-  <div class="field">
-    <%= "Description" %><br />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="label label-info">
+           <%= "Description" %>
+        </span>
+      </td>
+      <td>
     <%= @fooditem.description %>
-  </div>
+      </td>
+    </tr>
+  </table>
+  <ul class="pager">
+      <li>
+        <%= link_to "back" ,@hotel %>
+      </li>
+    </ul>
