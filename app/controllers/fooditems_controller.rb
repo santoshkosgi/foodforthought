@@ -24,6 +24,18 @@ class FooditemsController < ApplicationController
   def update
     @hotel = Hotel.find(params[:hotel_id])
     @fooditem = @hotel.fooditems.create(params[:fooditem])
-    redirect_to hotel_path(@hotel)
+    if @fooditem.update_attributes(params[:fooditem])
+      redirect_to hotel_path(@hotel)
+    else
+         render edit_fooditem_path(@fooditem)
+    end
+  end
+
+  def destroy
+
+    @hotel = Hotel.find(params[:hotel_id])
+    @fooditem = @hotel.fooditems.find(params[:id])
+    @fooditem.destroy
+    redirect_to post_path(@hotel)
   end
 end

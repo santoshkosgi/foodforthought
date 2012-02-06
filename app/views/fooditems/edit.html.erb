@@ -1,25 +1,47 @@
-<h1>new</h1>
-<%= form_for([@hotel, @hotel.fooditems.build]) do |f| %>
+<%= form_for @fooditem,:url => { :controller => "fooditems", :action => "update" } do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :name %>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
   </div>
+  <br/>
+  <br/>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :price %>
+    <div class="input">
     <%= f.text_field :price %>
+    </div>
   </div>
+  <br/>
+  <br/>
   <div class="field">
-    <%= f.label :category %><br />
+    <%= f.label :category %>
+    <div class="input">
     <%= f.text_field :category %>
+    </div>
   </div>
+  <br/>
+  <br/>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
+    <div class="input">
     <%= f.text_area :description %>
+    </div>
   </div>
+  <br/>
+  <br/>
   <div class="clearfix">
     <%= f.file_field :photo %>
   </div>
+  <br/>
+  <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update", :class=>"btn primary"%>
   </div>
+  <ul class="pager">
+      <li>
+        <%= link_to "back" ,@hotel %>
+      </li>
+  </ul>
 <% end %>

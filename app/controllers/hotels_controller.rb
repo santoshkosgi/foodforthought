@@ -33,7 +33,7 @@ class HotelsController < ApplicationController
   def update
     @hotel = Hotel.find(params[:id])
 
-    if @hotel.save
+    if @hotel.update_attributes(params[:hotel])
          redirect_to :controller => "hotels", :action => "index"
       else
          render :controller => "hotels",:action => "edit", :id => @hotel
@@ -41,6 +41,7 @@ class HotelsController < ApplicationController
   end
 
   def destroy
+
     @hotel = Hotel.find(params[:id])
     @hotel.destroy
 
