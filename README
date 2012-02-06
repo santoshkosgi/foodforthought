@@ -1,4 +1,17 @@
-== Welcome to Rails
+Food For Thought is a web application which allowa users to order food online. It is built on Rails.mysql database is used.Bootstrap layout is used for this application, the corresponding style sheets are saved in assets/stylesheets folder.
+
+The models in this application are:
+	-User
+	-User session
+	-Hotel
+	-Fooditems
+	-Comments
+
+each of these model have their own controllers and views. lets have a look into what are the functionalities of these controllers
+	User:
+	this is the main model of this application. it has two types of users one is Admin, who can add hotels,fooditems to
+  hotels and can edit them and the other is the normal user who can order food . Authlogic is used to provide   						               authentication to the user. for this add
+	" acts_as_authentic" to the user model.
 
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
