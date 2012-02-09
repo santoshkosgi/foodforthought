@@ -1,8 +1,0 @@
-<% content_for :head do %>
-  <title>Registration</title>
-<% end %>
-<% content_for :pagename do %>
-  Registration
-<% end %>
-<h1>New User</h1>
-<%= render :partial => 'form' %>

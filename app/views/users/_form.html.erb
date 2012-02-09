@@ -1,13 +1,12 @@
 <%= form_for @user, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
-  <% if @user.errors.full_messages.each %>
+  <% if @user.errors.full_messages[0] %>
     <ul class="alert-message block-message error">
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-    <% end %>
+      <% end %>
     </ul>
 
   <% else %>
-
   <% end %>
   <div class="clearfix">
     <%= f.label :name %>

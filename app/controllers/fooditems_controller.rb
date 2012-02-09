@@ -1,5 +1,10 @@
 class FooditemsController < ApplicationController
 
+  def index
+    @hotel = Hotel.find(params[:hotel])
+    @fooditem = @hotel.fooditems.all
+  end
+
   def create
     @hotel = Hotel.find(params[:hotel_id])
     @fooditem = @hotel.fooditems.create(params[:fooditem])
@@ -23,7 +28,7 @@ class FooditemsController < ApplicationController
 
   def update
     @hotel = Hotel.find(params[:hotel_id])
-    @fooditem = @hotel.fooditems.create(params[:fooditem])
+    @fooditem = @hotel.fooditems.find(params[:id])
     if @fooditem.update_attributes(params[:fooditem])
       redirect_to hotel_path(@hotel)
     else
@@ -32,10 +37,9 @@ class FooditemsController < ApplicationController
   end
 
   def destroy
-
     @hotel = Hotel.find(params[:hotel_id])
     @fooditem = @hotel.fooditems.find(params[:id])
-    @fooditem.destroy
-    redirect_to post_path(@hotel)
+    @fooditem.destroy_all
+    redirect_to hotel_path(@hotel)
   end
 end

@@ -1,7 +1,7 @@
 <div class="topbar">
   <div class="fill">
     <div class="container">
-      <a class="brand" href="#">Food for thought</a>
+      <%= link_to "Food for thought",root_url,:class => "brand" %>
       <ul class="nav">
         <% if current_user %>
           <li><%= link_to 'Hotels',:controller =>'hotels',:action => 'index' %></li>

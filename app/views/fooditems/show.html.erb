@@ -5,7 +5,7 @@
   <%= @hotel.name %> <%= @hotel.location %>
 <% end %>
 <h1><%= @fooditem.name %></h1>
-  <%= image_tag @fooditem.photo.url %>
+  <%= image_tag @fooditem.photo.url(:small) %>
   <table>
     <tr>
       <td>

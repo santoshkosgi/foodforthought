@@ -17,6 +17,9 @@ end
 
 gem "daemons"
 
+#will_paginate for items
+gem 'will_paginate', '~> 3.0'
+
 #postmark app.
 gem 'postmark-rails', '0.4.1'
 

@@ -1,4 +1,10 @@
 class Fooditem < ActiveRecord::Base
+  #validation
+  validates :name,  :presence => true
+  validates :price, :presence => true
+  validates :category,  :presence => true
+  validates :description, :presence => true
+
   belongs_to :hotel
   has_many :comments, :as => :commentable
 

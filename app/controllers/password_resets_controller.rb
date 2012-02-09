@@ -6,8 +6,6 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user
       @user.password_reset_instructions!
-      Notifier.delay.deliver_password_reset_instructions(@user)
-      flash[:notice] = "Instructions to reset your password have been emailed to you"
       redirect_to root_path
     else
       flash.now[:error] = "No user was found with email address #{params[:email]}"

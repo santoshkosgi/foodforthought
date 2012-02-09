@@ -5,4 +5,8 @@
 <td>
 <%= link_to "Edit" , edit_hotel_fooditem_path(hotel,fooditem) %>
 </td>
+<td>
+<%= link_to 'Delete', hotel_fooditem_path(hotel,fooditem) ,
+      :method => :delete %>
+</td>
 </tr>

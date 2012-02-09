@@ -1,9 +1,14 @@
 <%= form_for @user_session, :url => { :action => "create" } do |f| %>
-  <ul class="alert-message block-message error">
-    <% @user_session.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+  <% if @user_session.errors.full_messages[0] %>
+    <ul class="alert-message block-message error">
+      <% @user_session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  <% else %>
+
+  <% end %>
   <div class="clearfix">
     <%= f.label :email %>
     <div class="input">
