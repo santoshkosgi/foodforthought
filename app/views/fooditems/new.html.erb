@@ -1,5 +1,5 @@
 <h1>new</h1>
-<%= form_for([@hotel, @hotel.fooditems.build]) do |f| %>
+<%= form_for @fooditem do |f| %>
 
   <div class="field">
     <%= f.label :name %>
@@ -8,6 +8,7 @@
     </div>
   </div>
   <br/><br/>
+
   <div class="field">
     <%= f.label :price %>
       <div class="input">
@@ -15,6 +16,7 @@
       </div>
   </div>
   <br/><br/>
+
   <div class="field">
     <%= f.label :category %>
     <div class="input">
@@ -22,22 +24,33 @@
     </div>
   </div>
   <br/><br/>
+
   <div class="field">
     <%= f.label :description %>
     <div class="input">
       <%= f.text_area :description %>
     </div>
   </div>
+  <br/><br/>
+  <% if @hotel == nil %>
+    <div class="field">
+      <%= f.label :hotel %>
+      <div class="input">
+        <%= f.collection_select(:hotel_id,Hotel.all,:id,:name) %>
+      </div>
+    </div>
+  <% else %>
+      <%= f.hidden_field :hotel_id, :value => @hotel.id %>
+  <% end %>
 
+<br/><br/>
   <div class="clearfix">
     <%= f.file_field :photo %>
   </div>
+<br/><br/>
   <div class="actions">
     <%= f.submit "Create Food Item", :class=>"btn primary" %>
   </div>
-  <ul class="pager">
-      <li>
-        <%= link_to "back" ,@hotel %>
-      </li>
-  </ul>
-<% end %>
+
+
+  <% end %>

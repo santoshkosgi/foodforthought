@@ -7,6 +7,7 @@ class HotelsController < ApplicationController
   def show
 
     @hotel = Hotel.find(params[:id])
+    @fooditem = @hotel.fooditems
 
   end
 

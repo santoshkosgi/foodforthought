@@ -7,10 +7,10 @@
 <h1> Items Availiable </h1>
 
 <table>
-    <%= render :partial=>'listing1', :collection => @hotel.fooditems, :as => 'fooditem', :locals => {:hotel => @hotel}%>
+    <%= render :partial=>'listing1', :collection => @fooditem, :as => 'fooditem', :locals => {:hotel => @hotel,:fooditem => @fooditem}%>
 </table>
 <div class="btn-group">
-<%= link_to "Add new item" ,new_hotel_fooditem_path(@hotel), :class => "btn"%>
+  <%= link_to "Add new item" ,:controller => "fooditems", :action => "new", :id => @hotel.id, :class => "btn"%>
 </div>
 <br/>
 <br/>

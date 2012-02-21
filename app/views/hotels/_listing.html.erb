@@ -1,6 +1,6 @@
 <tr>
 <td>
-<%= link_to hotel.name , hotel %>
+<%= link_to hotel.name ,:controller => "hotels", :action => "show",:id => hotel.id %>
 </td>
 <td>
 <%= link_to "Edit" , edit_hotel_path(hotel) %>

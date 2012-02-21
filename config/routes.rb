@@ -1,13 +1,13 @@
 Food::Application.routes.draw do
   resources :user_sessions
-  resources:users
-  resources:hotels do
-    resources :fooditems
+  resources :users
+  resources :fooditems
+  resources :hotels do
+
     resources :comments
   end
 
   match "logout" => 'user_sessions#destroy'
-  match "fooditem" => "fooditems#show"
   resources :password_resets
 
   get "home/index"
@@ -21,7 +21,7 @@ Food::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):

@@ -6,29 +6,39 @@ class FooditemsController < ApplicationController
   end
 
   def create
-    @hotel = Hotel.find(params[:hotel_id])
-    @fooditem = @hotel.fooditems.create(params[:fooditem])
-    redirect_to hotel_path(@hotel)
+    @fooditem = Fooditem.new(params[:fooditem])
+    if @fooditem.save(params[:fooditem])
+      redirect_to root_url
+    else
+      render :new
+    end
   end
 
   def show
-    @hotel = Hotel.find(params[:hotel_id])
-    @fooditem = @hotel.fooditems.find(params[:id])
+    @fooditem = Fooditem.find(params[:id])
+    @hotel = @fooditem.hotel
   end
 
   def new
-  @hotel=Hotel.find(params[:hotel_id])
-  @fooditem = @hotel.fooditems.new
+    #@hotel=Hotel.find(params[:hotel_id])
+    @fooditem = Fooditem.new
+    if params[:id]
+      @hotel=Hotel.find(params[:id])
+    end
+  end
+
+  def list
+    @fooditems = Hotel.find(params[:id]).fooditems
   end
 
   def edit
-   @hotel = Hotel.find(params[:hotel_id])
-   @fooditem = @hotel.fooditems.find(params[:id])
+    @fooditem = Fooditem.find(params[:id])
+    @hotel = @fooditem.hotel
   end
 
   def update
-    @hotel = Hotel.find(params[:hotel_id])
-    @fooditem = @hotel.fooditems.find(params[:id])
+    @fooditem = Fooditem.find(params[:id])
+    @hotel = @fooditem.hotel
     if @fooditem.update_attributes(params[:fooditem])
       redirect_to hotel_path(@hotel)
     else
@@ -37,9 +47,11 @@ class FooditemsController < ApplicationController
   end
 
   def destroy
-    @hotel = Hotel.find(params[:hotel_id])
-    @fooditem = @hotel.fooditems.find(params[:id])
-    @fooditem.destroy_all
+
+    @fooditem = Fooditem.find(params[:id])
+    @hotel = @fooditem.hotel
+    @fooditem.destroy
     redirect_to hotel_path(@hotel)
+
   end
 end
