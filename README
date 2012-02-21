@@ -38,4 +38,8 @@ comments to the hotels and the fooditems.
 The model hotel and fooditem are associated by has_many and belongs_to
 associations. Model comments is ploymorphically associated to the user and food
 item.
+<<<<<<< HEAD
 images for user and the fooditems are added using paperclip gem. 
+=======
+images for user and the fooditems are added using paperclip gem. 
+>>>>>>> origin/master
