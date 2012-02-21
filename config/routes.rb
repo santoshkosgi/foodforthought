@@ -1,13 +1,16 @@
 Food::Application.routes.draw do
   resources :user_sessions
   resources :users
-  resources :fooditems
+  resources :fooditems do
+    post 'add_photo1', :on => :collection
+  end
   resources :hotels do
 
     resources :comments
   end
 
   match "logout" => 'user_sessions#destroy'
+  match "add_photo" => "fooditems#add_photo"
   resources :password_resets
 
   get "home/index"

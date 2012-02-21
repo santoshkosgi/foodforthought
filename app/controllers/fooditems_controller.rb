@@ -27,6 +27,20 @@ class FooditemsController < ApplicationController
     end
   end
 
+  def add_photo
+     render :layout => nil
+  end
+
+  def add_photo1
+     render :layout => nil
+     uri = URI('http://api.flickr.com/services/rest/')
+     param = { :method => 'flickr.photos.search', :api_key =>"b918d8ee76b61763671fedc99130696a",
+                :text =>params[:name], :format =>"rest"}
+     uri.query = URI.encode_www_form(param)
+     res = Net::HTTP.get_response(uri)
+     puts res.body
+  end
+
   def list
     @fooditems = Hotel.find(params[:id]).fooditems
   end

@@ -51,6 +51,10 @@
   <div class="actions">
     <%= f.submit "Create Food Item", :class=>"btn primary" %>
   </div>
-
-
   <% end %>
+  <script>
+  $(document).ready(function () {
+      $('.main').colorbox({width:"55%", height:"55%"});
+  });
+  </script>
+  <%= link_to "My superb link",add_photo_path,:class => "main"%>
