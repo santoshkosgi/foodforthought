@@ -1,0 +1,31 @@
+<%= form_tag({:controller => "fooditems", :action => "add_photo1"},:remote => true,:method => "post",:remote => true,:id => "form1") do %>
+  <div class="input">
+    <%= text_field_tag :name %>
+  </div>
+  <br/><br/>
+
+  <div class="actions">
+    <%= submit_tag "Search", :class=>"btn primary" %>
+  </div>
+  <div id="data">
+  </div>
+<% end %>
+
+<script>
+   $(document).ready(function () {
+    $('.btn primary').click(function(){
+      $.ajax({
+        data: $.(#form1).serialize(),
+        success: function(data){
+        $("#data").html(data)
+
+        }
+      }
+
+      )
+    }
+
+    )
+    }
+    )
+</script>

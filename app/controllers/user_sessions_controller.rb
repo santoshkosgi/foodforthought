@@ -1,12 +1,7 @@
 class UserSessionsController < ApplicationController
-  # GET /user_sessions
-  # GET /user_sessions.json
 
-  # GET /user_sessions/1
-  # GET /user_sessions/1.json
+  skip_before_filter :require_login, :only => [:new, :create]
 
-  # GET /user_sessions/new
-  # GET /user_sessions/new.json
   def new
     @user_session = UserSession.new
   end

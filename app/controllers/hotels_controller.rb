@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-
+  before_filter :require_login
   def index
     @hotels = Hotel.all
   end

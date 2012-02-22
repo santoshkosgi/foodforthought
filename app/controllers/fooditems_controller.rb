@@ -47,7 +47,11 @@ class FooditemsController < ApplicationController
     @doc.elements.each("rsp/photos/photo")  do |element|
       @titles.push(element.attributes["title"])
     end
-    render :layout => nil
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def list
