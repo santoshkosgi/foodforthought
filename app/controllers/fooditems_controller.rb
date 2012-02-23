@@ -49,8 +49,7 @@ class FooditemsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html
-      format.json
+      format.js { render :layout => false}
     end
   end
 

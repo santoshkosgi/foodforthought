@@ -1,3 +1,4 @@
+alert("hi")
 <% @titles.each do |title| %>
-  $("#data").html(title)
+  $("#data").append('<%= title %>')
 <% end %>

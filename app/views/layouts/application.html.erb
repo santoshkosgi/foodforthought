@@ -1,11 +1,12 @@
 <html>
   <head>
     <%= yield :head %>
-    <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.css" rel="stylesheet">
-    <link href="http://jacklmoore.com/colorbox/example1/colorbox.css" rel="stylesheet">
+    <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.css" %>
+    <%= stylesheet_link_tag "http://jacklmoore.com/colorbox/example1/colorbox.css" %>
     <%= stylesheet_link_tag "style" %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://jacklmoore.com/colorbox/colorbox/jquery.colorbox.js"></script>
+    <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"%>
+    <%= javascript_include_tag "http://jacklmoore.com/colorbox/colorbox/jquery.colorbox.js"%>
+    <%= javascript_include_tag "/assets/app.js"%>
   </head>
   <body>
 
