@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-   skip_before_filter :require_login, :only => [:new, :create]
+
+  #many to many relation between users and events
+
+  #filter for checking the login of user
+  skip_before_filter :require_login, :only => [:new, :create]
   def new
     @user=User.new
   end

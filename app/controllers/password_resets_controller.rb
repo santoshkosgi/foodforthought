@@ -1,6 +1,8 @@
 class PasswordResetsController < ApplicationController
+ skip_before_filter :require_login
  def new
-  end
+
+ end
 
   def create
     @user = User.find_by_email(params[:email])
@@ -14,6 +16,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update

@@ -8,7 +8,6 @@ gem "nifty-generators", :group => :development
 gem "authlogic"
 gem "heroku"
 group :production, :staging do
-  gem "pg"
 end
 
 group :development, :test do
