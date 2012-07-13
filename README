@@ -1,4 +1,4 @@
-Food For Thought is a web application which allowa users to order food online.
+Food For Thought is a web application which allows users to order food online.
 It is built on Rails.mysql database is used.Bootstrap layout is used for this
 application, the corresponding style sheets are saved in assets/stylesheets
 folder.
